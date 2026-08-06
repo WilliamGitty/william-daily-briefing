@@ -62,3 +62,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # This site's Pages deployments have been intermittently slow to
+          # leave "queued" on GitHub's backend (seen 5.5min-plus, well past
+          # the action's 10min default), causing spurious timeouts. Give it
+          # more room rather than repeatedly retrying by hand.
+          timeout: 1200000
