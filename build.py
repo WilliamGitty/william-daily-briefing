@@ -38,6 +38,9 @@ USER_AGENT = (
     "+https://github.com/WilliamGitty/william-daily-briefing)"
 )
 
+BBC_NEWS = "http://feeds.bbci.co.uk/news/rss.xml"
+FT_HOME = "https://www.ft.com/rss/home/international"
+
 BBC_TECH = "http://feeds.bbci.co.uk/news/technology/rss.xml"
 VERGE_TECH = "https://www.theverge.com/rss/tech/index.xml"
 ARSTECHNICA_TECH = "https://feeds.arstechnica.com/arstechnica/index"
@@ -65,6 +68,7 @@ RAPPLER_PH = "https://www.rappler.com/feed/"
 PHILSTAR_PH = "https://www.philstar.com/rss/headlines"
 
 SECTIONS = [
+    {"key": "news", "title": "News", "feeds": [BBC_NEWS, FT_HOME]},
     {"key": "tech", "title": "Tech", "feeds": [BBC_TECH, VERGE_TECH, ARSTECHNICA_TECH]},
     {"key": "ai", "title": "AI", "feeds": [TECHCRUNCH_AI, VERGE_AI, ARSTECHNICA_AI]},
     {"key": "sport", "title": "Sports", "feeds": [BBC_SPORT, SKY_SPORTS_NEWS]},
@@ -157,6 +161,7 @@ def source_name(entry, feed_url):
         "theverge.com": "The Verge",
         "arstechnica.com": "Ars Technica",
         "theguardian.com": "The Guardian",
+        "ft.com": "Financial Times",
         "skysports.com": "Sky Sports",
         "sciencedaily.com": "ScienceDaily",
         "statnews.com": "STAT News",
